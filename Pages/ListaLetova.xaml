@@ -1,0 +1,33 @@
+﻿<Page x:Class="Aerodrom.Pages.ListaLetova"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Aerodrom.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListaLetova">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="0" x:Name="Meni" />
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Column="0" x:Name="dataGrid" CanUserAddRows="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" BorderBrush="{x:Null}" ClipToBounds="True" Cursor="Arrow" IsTextSearchEnabled="True" CanUserReorderColumns="False" CanUserResizeColumns="False" GridLinesVisibility="Horizontal" AlternatingRowBackground="#FF2C2E36" RowBackground="Transparent" Foreground="#FFC7C7C7" FontSize="14" >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#FFB4B42F" />
+                    <Setter Property="Foreground" Value="#FF1C8E95" />
+                </Style>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" 
+                   Color="#FF1C8E95"/>
+            </DataGrid.Resources>
+        </DataGrid>
+        <StackPanel Grid.Column="1">
+            <Button x:Name="ToggleButton" Content="Moji letovi" VerticalAlignment="Top" Height="60" Background="Transparent" BorderBrush="Transparent" Foreground="#FFC7C7C7" Margin="0,20,0,10" Click="ToggleButton_Click" />
+            <Button x:Name="ActionButton" Content="Kupi kartu" VerticalAlignment="Top" Height="60" Background="Transparent" BorderBrush="Transparent" Foreground="#FFC7C7C7" Margin="0,10" Click="ActionButton_Click" />
+            <Button x:Name="EditFlight" Content="Izmeni let" VerticalAlignment="Top" Height="60" Background="Transparent" BorderBrush="Transparent" Foreground="#FFC7C7C7" Margin="0,10" Click="EditFlight_Click" />
+            <Button x:Name="DeleteFlight" Content="Obrisi let" VerticalAlignment="Top" Height="60" Background="Transparent" BorderBrush="Transparent" Foreground="#FFC7C7C7" Margin="0,10" Click="DeleteFlight_Click" />
+        </StackPanel>
+       </Grid>
+</Page>
